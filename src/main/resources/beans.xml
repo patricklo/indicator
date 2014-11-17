@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <bean id="paramConfig"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:config.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="coreApp" class="financial.Core">
+        <property name="shortPeriod" value="${macd.shortPeriod}"/>
+        <property name="longPeriod" value="${macd.longPeriod}"/>
+        <property name="midPeriod" value="${macd.midPeriod}"/>
+        <property name="smaPeriod" value="${sma.period}"/>
+        <property name="smaDate" value="${sma.date}"/>
+    </bean>
+</beans>
