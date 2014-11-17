@@ -12,7 +12,7 @@ import java.util.concurrent.RecursiveTask;
 
 /**
  * Created with IntelliJ IDEA.
- * User: f507303
+ * User: Patrick Lo
  * Date: 11/15/14
  * Time: 1:09 PM
  * To change this template use File | Settings | File Templates.
