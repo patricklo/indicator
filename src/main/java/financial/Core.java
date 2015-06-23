@@ -73,7 +73,7 @@ public class Core {
                         log.info("the EMA equals to " + emaCalculator.calculteEMA(priceResults, 9));
                         break;
                     case 4:
-                        log.info(core.getMACD(priceResults.subList(0, 10000), shortPeriod, longPeriod, midPeriod));
+                        log.info(core.getMACD(priceResults.subList(0, 5000), shortPeriod, longPeriod, midPeriod));
                         break;
                     default:
                 }
@@ -141,7 +141,7 @@ public class Core {
         int availableProcessors = Runtime.getRuntime().availableProcessors();
         ForkJoinPool forkJoinPool = new ForkJoinPool(availableProcessors);
         //int threshold = priceList.size()/(availableProcessors-1);
-        BigDecimal threshold = new BigDecimal(list.size()).divide(new BigDecimal(availableProcessors - 1), 0, BigDecimal.ROUND_UP);
+        BigDecimal threshold = new BigDecimal(list.size()).divide(new BigDecimal(availableProcessors + 5), 0, BigDecimal.ROUND_UP);
         int beginIndexForCal = 0;
         int endIndexForCal = 0;
         List<Future<List>> resultList = new CopyOnWriteArrayList<Future<List>>();

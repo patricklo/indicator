@@ -37,13 +37,13 @@ public class SMACalculator extends RecursiveTask<BigDecimal> {
         } else {
             int middle = size / 2;
             SMACalculator leftTask = new SMACalculator(priceList.subList(0, middle));
-            SMACalculator rightTask = new SMACalculator(priceList.subList(middle + 1, size));
+            SMACalculator rightTask = new SMACalculator(priceList.subList(middle, size));
             leftTask.fork();
             rightTask.fork();
             BigDecimal leftResult = leftTask.join();
             BigDecimal rightResult = rightTask.join();
             sum = leftResult.add(rightResult);
-        };
+        }
         return sum;
     }
 
